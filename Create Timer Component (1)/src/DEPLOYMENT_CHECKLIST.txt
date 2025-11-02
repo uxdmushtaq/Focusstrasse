@@ -1,0 +1,269 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║     FOCUS STRASSE - SITER.IO DEPLOYMENT CHECKLIST            ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+Print this checklist and mark off each step as you complete it.
+
+═══════════════════════════════════════════════════════════════
+
+PHASE 1: DOWNLOAD ASSETS (10 minutes)
+──────────────────────────────────────────────────────────────
+
+□ Open Figma Make preview in browser
+
+□ Download Logo
+  • Right-click logo in top-left corner
+  • Save as: focus-strasse-logo.png
+  
+□ Download Mountain Illustration  
+  • Click "Mountains" button in timer
+  • Right-click mountain image at bottom
+  • Save as: mountain-illustration.png
+  
+□ Download Forest Illustration
+  • Click "Forest" button in timer  
+  • Right-click forest image at bottom
+  • Save as: forest-illustration.png
+
+□ Verify all 3 files downloaded
+  • focus-strasse-logo.png
+  • mountain-illustration.png  
+  • forest-illustration.png
+
+═══════════════════════════════════════════════════════════════
+
+PHASE 2: PROJECT SETUP (5 minutes)
+──────────────────────────────────────────────────────────────
+
+□ Create folder structure
+  Command: mkdir -p public/assets
+
+□ Move all 3 assets to public/assets/
+
+□ Verify file names match exactly (case-sensitive!)
+  • focus-strasse-logo.png ✓
+  • mountain-illustration.png ✓
+  • forest-illustration.png ✓
+
+═══════════════════════════════════════════════════════════════
+
+PHASE 3: LOCAL TESTING (10 minutes)
+──────────────────────────────────────────────────────────────
+
+□ Install dependencies
+  Command: npm install
+  
+□ Start development server
+  Command: npm run dev
+  
+□ Open browser to: http://localhost:5173
+
+□ Test Logo
+  • Logo appears in top-left corner
+
+□ Test Search Bar
+  • Type "test" and press Enter
+  • Opens Google search
+
+□ Test Timer
+  • Click Start - timer counts down
+  • Rain auto-selects and plays
+  • Click Pause - timer pauses
+  • Click Reset - returns to 25:00
+  • Up/down arrows adjust time
+
+□ Test Ambient Sounds
+  • Beach Waves - click to play ocean sounds
+  • Rain - click to play rain sounds
+  • Mountains - mountain illustration appears + sound plays
+  • Forest - forest illustration appears + sound plays
+  • Volume slider controls volume
+  • Mute button works
+
+□ Test Visual Effects
+  • Waves animation appears for Beach
+  • Misty rain appears for Rain  
+  • Snow falls for Mountains
+  • Fireflies appear for Forest
+
+═══════════════════════════════════════════════════════════════
+
+PHASE 4: BUILD FOR PRODUCTION (5 minutes)
+──────────────────────────────────────────────────────────────
+
+□ Create production build
+  Command: npm run build
+  
+□ Verify build completed without errors
+  • Check for "dist" folder created
+  • No red error messages in terminal
+
+□ Preview production build (optional)
+  Command: npm run preview
+  Open: http://localhost:4173
+
+═══════════════════════════════════════════════════════════════
+
+PHASE 5A: DEPLOY VIA DIRECT UPLOAD
+──────────────────────────────────────────────────────────────
+
+□ Go to https://siter.io
+
+□ Log in to your account
+
+□ Click "New Site"
+
+□ Select "Upload folder"
+
+□ Upload the "dist" folder
+
+□ Wait for deployment to complete
+
+□ Copy your site URL
+
+□ Test live site (see Phase 6)
+
+═══════════════════════════════════════════════════════════════
+
+PHASE 5B: DEPLOY VIA GITHUB (Alternative)
+──────────────────────────────────────────────────────────────
+
+□ Initialize git (if not already)
+  Commands:
+  git init
+  git add .
+  git commit -m "Initial commit - Focus Strasse"
+
+□ Create GitHub repository
+
+□ Push to GitHub
+  Commands:
+  git remote add origin [YOUR_REPO_URL]
+  git push -u origin main
+
+□ On Siter.io, click "New Site"
+
+□ Select "Import from Git"
+
+□ Choose your GitHub repository
+
+□ Configure build settings:
+  • Framework: Vite
+  • Build command: npm run build
+  • Output directory: dist
+  • Install command: npm install
+
+□ Click "Deploy Site"
+
+□ Wait for build to complete
+
+□ Copy your site URL
+
+═══════════════════════════════════════════════════════════════
+
+PHASE 6: POST-DEPLOYMENT TESTING
+──────────────────────────────────────────────────────────────
+
+□ Open deployed site in browser
+
+□ Visual Check
+  • Logo visible and crisp
+  • Timer displays 25:00
+  • Search bar visible
+  • Footer links visible
+
+□ Functional Check
+  • Search works - redirects to Google
+  • Timer starts/pauses/resets
+  • Up/down arrows adjust time
+  • Progress bar animates
+
+□ Ambient Sounds Check
+  • Beach Waves - sound plays, animations appear
+  • Rain - sound plays, rain falls
+  • Mountains - sound plays, mountain image + snow
+  • Forest - sound plays, forest image + fireflies
+  • Volume control works
+  • Mute button works
+
+□ Mobile Check (optional)
+  • Open on mobile device
+  • Layout responsive
+  • Touch controls work
+  • Audio plays (may need tap to enable)
+
+□ Browser Check (optional)
+  • Chrome ✓
+  • Firefox ✓
+  • Safari ✓
+
+═══════════════════════════════════════════════════════════════
+
+PHASE 7: FINAL STEPS
+──────────────────────────────────────────────────────────────
+
+□ Add custom domain (optional)
+  • In Siter.io: Site Settings → Domains
+
+□ Enable HTTPS (should be automatic)
+
+□ Bookmark your site
+
+□ Share with friends! 🎉
+
+═══════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING
+──────────────────────────────────────────────────────────────
+
+Assets not showing?
+  → Check files are in public/assets/
+  → Verify file names match exactly
+
+Build failing?
+  → Run: npm install --legacy-peer-deps
+  → Then: npm run build
+
+Sounds not playing?
+  → Click sound button (browser autoplay policy)
+  → Try different browser
+
+Deployment failed?
+  → Check Siter.io build logs
+  → Verify all files committed to git (if using GitHub)
+
+═══════════════════════════════════════════════════════════════
+
+HELP RESOURCES
+──────────────────────────────────────────────────────────────
+
+Quick Start:       QUICK_DEPLOY.md
+Detailed Guide:    EXPORT_GUIDE.md
+Asset Help:        VISUAL_ASSET_GUIDE.md
+Testing Guide:     DEPLOYMENT_TEST.md
+Full Summary:      EXPORT_SUMMARY.md
+
+═══════════════════════════════════════════════════════════════
+
+□ DEPLOYMENT COMPLETE! 
+
+Your Focus Strasse start page is now live at:
+
+Site URL: _______________________________________
+
+Deployed on: ____________________________________
+
+═══════════════════════════════════════════════════════════════
+
+Notes:
+_______________________________________________________________
+
+_______________________________________________________________
+
+_______________________________________________________________
+
+_______________________________________________________________
+
+═══════════════════════════════════════════════════════════════
